@@ -1,7 +1,7 @@
 //Vars Declarations & Initialization ..
 
-let generateAlphabets = '', char, randomSelectedWord, count = 10;
-const correctLettersArr = [], wrongLettersArr = [];
+let generateAlphabets = '', char, randomSelectedWord;
+let correctLettersArr = [], wrongLettersArr = [];
 
 
 const clickedAlphabets = document.getElementById('display-clicked-alphabets');
@@ -11,7 +11,6 @@ const notification = document.getElementById('notification-box');
 const modalBtn = document.getElementById('modalbtn');
 const hangman = document.querySelectorAll(".hangman");
 const announceGameResult = document.getElementById('announce');
-
 
 // Need to build wordbank workflow..
 // const wordBank = ['basketball'];
@@ -90,20 +89,29 @@ function clickedBtn(l) {
     }
 }
 
-//The below code needs to be tested and 
 document.getElementById('play-button').onclick = () => {
+     
+    wrongLettersBox.innerText = ''
 
-    document.getElementsByClassName('btn btn-secondary')[0].click()
+    //Empty the correct span letters
+    $("span").html("");
 
-    //Make the arrays empty .. 
-    correctLettersArr.splice(0);
-    wrongLettersArr.splice(0);
+    hangman.forEach((shape) => {
+            shape.style.display = 'none';
+        }
+    );
+   
+    $('#notificationModal').modal('hide');
 
-    randomSelectedWord = wordBank[Math.floor(Math.random() * wordBank.length)];
+    correctLettersArr = [];
+    wrongLettersArr = [];
 
-    displayTheCorrectWord()
-    updateWrongLetterAction();
+    randomSelectedWord = wordBank[Math.floor(Math.random() * wordBank.length)].toUpperCase();
 
+}
+
+document.getElementById('close').onclick = () => {
+    document.body.classList.add("close");
 }
 
 //Generate Alphabets Buttons
@@ -113,24 +121,10 @@ for (var i = 65; 90 >= i; i++) {// A-65, Z-90
 }
 document.getElementById('box').innerHTML = generateAlphabets;
 
-function timer() {
-
-    count = count - 1;
-    if (count <= 0) {
-        clearInterval();
-        $('#exampleModalCenter').modal('hide');
-        return;
-    }
-    document.getElementById("counter").innerHTML = count + " secs for this window to close !";
-
-}
-
 function showNotification(wrappedCorrectWord, result) {
 
     if (wrappedCorrectWord === randomSelectedWord || wrongLettersArr.length === hangman.length) {
-        timer();
         modalBtn.click();
-        setInterval(timer, 1000);
         announceGameResult.innerText = result;
 
     } else {
