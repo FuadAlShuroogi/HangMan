@@ -8,8 +8,13 @@ A word game in which the user has to guess a word until six wrong guesses have b
 <!-- Will update later -->
 
 # Approach taken 
+<<<<<<< HEAD
 <li>Wireframe.</li>
 <li>Pseudocode.</li>
+=======
+1.Wireframe
+2.Pseudocode
+>>>>>>> 96bb38db0b37702420dd0091975adaf779e9abf9
 
 # Technology used - 
 
