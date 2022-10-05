@@ -5,14 +5,14 @@ Hangman
 A word game in which the user has to guess a word until six wrong guesses have been made or until the word is completed,whichever happens first.At the end of a round, the user is prompted to indicate whether he/she wants to play again. The game ends when the player indicates that he/she wants to quit.
 
 # Live Site 
-<!-- Will update later -->
+Will update later
 
 # Approach taken 
 
 <li>Wireframe.</li>
 <li>Pseudocode.</li>
 
-# Technology used - 
+# Technology used
 
 <ol>
   <li>Bootstrap , Popper js , Jquery (This bundle for bootstrap to work)</li>
