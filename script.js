@@ -15,7 +15,7 @@ const announceGameResult = document.getElementById('announce');
 // Need to build wordbank workflow..
 // const wordBank = ['basketball'];
 // For testing..
-const wordBank = ['test'];
+const wordBank = ['boxing','cycling','football','swimming','tennis'];
 randomSelectedWord = wordBank[Math.floor(Math.random() * wordBank.length)].toUpperCase();
 console.log(randomSelectedWord)
 
@@ -42,8 +42,12 @@ function checkForWinorLose() {
 
 }
 
+
+
 // Update the wrong letters
 function updateWrongLetterAction() {
+    $("body").css("overflow", "hidden");
+
     //Display wrong letters
     wrongLettersBox.innerHTML = `
     ${wrongLettersArr.length > 0 ? '<p>Wrong</p>' : ''}
@@ -112,6 +116,9 @@ document.getElementById('play-button').onclick = () => {
 
 document.getElementById('close').onclick = () => {
     document.body.classList.add("close");
+    let elem = document.getElementById('backbtn');
+    elem.parentNode.removeChild(elem);
+    
 }
 
 //Generate Alphabets Buttons
