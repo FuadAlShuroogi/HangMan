@@ -14,6 +14,11 @@ h1{
     font-family: 'Rubik Wet Paint', cursive;
 }
 
+#h4{
+    font-family: 'Rancho', cursive; 
+    font-size: 29px;
+}
+
 #categoryH1Tag{
     font-family: 'Lacquer', cursive;
 }
@@ -98,4 +103,15 @@ img{
 
 .close { 
  pointer-events: none; 
+}
+
+#collapse{
+    margin: 20px;
+}
+
+.howtoplay {
+    max-width: 20%;
+    height: 100px;
+    float: left;
+    margin: 0 1.5em 0 0 ;
 }
