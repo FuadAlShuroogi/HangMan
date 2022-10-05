@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hang Man - Home</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rancho&family=Bungee+Spice&display=swap" rel="stylesheet">
+   
+</head>
+
+<body>
+
+    <div class="p-5 text-center bg-white">
+        <img src="./images/hangman.jpeg" alt="Hang Man Pic!">
+
+        <h4 class="text-center bg-light text-secondary" id="h4" >Hangman is a popular word guessing game where
+            the player attempts to build a missing word by guessing one letter
+            at a time. After a certain number of incorrect guesses, the game ends
+            and the player loses. The game also ends if the player correctly
+            identifies all the letters of the missing word.</h4>
+         
+        <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapse" aria-expanded="false" aria-controls="collapse">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+              </svg> HOW TO PLAY ?
+          </button>
+
+      <div class="collapse" id="collapse">
+      <div class="card card-body" style="margin: 10px">
+
+
+      <div class="section group">
+      <p style="font-family: 'Bungee Spice', cursive;">Game Instructions</p>
+      <hr>
+      <img class="howtoplay" src="/images/howtoplay.jpeg" alt="How to play ?">
+      <p class="text-center bg-light text-secondary" style="font-family: 'Rancho', cursive; 
+      font-size: 25px;" >There are five words to guess. 
+      They are displayed randomly. Each word is represented by a set of blank lines (one line for 
+      one letter) at the top of the game board.At the bottom of the board you can see letter buttons 
+      for each letter of the alphabet.</p>
+      <p class="text-center bg-light text-secondary" style="font-family: 'Rancho', cursive; 
+      font-size: 25px;">Click on any letter that you think is in the word. 
+      If the word has this letter, it appears in the proper blank. If you choose a letter that is 
+      not in the word, the hangman gets displayed. Try to guess the word before the man gets hanged
+      ! When you complete the word (no matter as a winner or loser), click on the Play Again button 
+      to continue the game.</p>
+      <hr>
+      </div>
+
+            </div>
+          </div>
+
+
+                  <button type="button" onclick="location.href='http://127.0.0.1:5500/htmls/Category.html'"
+            class="btn btn-info">START GAME</button>
+            
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+    integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+    integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+    
+    <script>
+      $("body").css("overflow", "visible");
+
+      document.addEventListener("click", hideCollapse);
+      
+      function hideCollapse() {
+          $(".collapse").collapse('hide');
+      }
+
+    </script>
+</body>
+</html>
