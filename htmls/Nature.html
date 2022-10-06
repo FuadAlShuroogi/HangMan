@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hang Man - Nature</title>
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <link rel="stylesheet" href="/HangMan/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Love+Light&family=Poiret+One&family=Rubik+Wet+Paint&display=swap"
+    rel="stylesheet">
+    <script defer src="/wordbank.js"></script>
+</head>
+
+<body>
+
+  <h1><br></h1>
+  <h1 class="text-center bg-light text-secondary">Hangman</h1>
+  <div class="gameboard">
+
+
+    <div class="wrong-letters-box">
+      <div id="wrong-letters"></div>
+    </div>
+    <div class="display-clicked-alphabets" id="display-clicked-alphabets"></div>
+
+    <!-- HANGMAN SVG -->
+    <svg height="250" width="200" class="svg-box">
+      <!-- Rod -->
+      <line x1="60" y1="20" x2="140" y2="20" />
+      <line x1="140" y1="20" x2="140" y2="50" />
+      <line x1="60" y1="20" x2="60" y2="230" />
+      <line x1="20" y1="230" x2="100" y2="230" />
+
+      <!-- Head -->
+      <circle cx="140" cy="70" r="20" class="hangman" />
+      <!-- Body -->
+      <line x1="140" y1="90" x2="140" y2="150" class="hangman" />
+      <!-- Arms -->
+      <line x1="140" y1="120" x2="120" y2="100" class="hangman" />
+      <line x1="140" y1="120" x2="160" y2="100" class="hangman" />
+      <!-- Legs -->
+      <line x1="140" y1="150" x2="120" y2="180" class="hangman" />
+      <line x1="140" y1="150" x2="160" y2="180" class="hangman" />
+    </svg>
+  </div>
+
+  <p class="text-center bg-light text-secondary">Guess the word - Click on a letter below</p>
+
+  <div id="box"></div>
+
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#notificationModal" id="modalbtn"
+    style="display: none">
+  </button>
+
+  <!-- Notification -->
+
+  <div class="alert alert-danger" role="alert" id="notification-box">
+    You have already clicked this letter !!!
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="notificationModal" tabindex="-1" role="dialog"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h2 class="text-secondary text-center" id="announce"></h2>
+          <h2 class="text-secondary text-center" id="counter"></h2>
+
+        </div>
+        <div class="modal-footer">
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button type="button" class="btn btn-success" id="play-button" onclick="playAgain()">Play Again</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <h1><br></h1>
+
+  <button id="backbtn" type="button" onclick="location.href='https://fuadalshuroogi.github.io/HangMan/htmls/Category.html'"
+            class="btn btn-primary">Back To Categories</button>
+
+
+  <script src="/HangMan/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+    integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+    integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
