@@ -20,6 +20,7 @@ randomSelectedWord = wordBank[Math.floor(Math.random() * wordBank.length)].toUpp
 console.log(randomSelectedWord)
 
 function displayTheCorrectWord() {
+
     clickedAlphabets.innerHTML = `
     ${randomSelectedWord.split('')
             .map(
@@ -32,13 +33,15 @@ function displayTheCorrectWord() {
 }
 
 function checkForWinorLose() {
+    //replace newline g - all matches , .replace() needs the global match flag:
+
     const wrapTheCorrectEnteredWord = clickedAlphabets.innerText.replace(/\n/g, '');
 
     //Check if won
     if (wrapTheCorrectEnteredWord === randomSelectedWord) showNotification(wrapTheCorrectEnteredWord, 'Congratulations! You won!👏');
 
     //Check if lose
-    if (wrongLettersArr.length === hangman.length) showNotification(wrapTheCorrectEnteredWord, 'Unfortunately you lost 😢');
+    if (wrongLettersArr.length === hangman.length) showNotification(wrapTheCorrectEnteredWord, 'Unfortunately you lost 😢' + `<hr> The word was <strong>${randomSelectedWord}</strong>`);
 
 }
 
@@ -97,9 +100,7 @@ document.getElementById('play-button').onclick = () => {
      
     wrongLettersBox.innerText = ''
 
-    //Empty the correct span letters
-    $("span").html("");
-
+    
     hangman.forEach((shape) => {
             shape.style.display = 'none';
         }
@@ -111,6 +112,13 @@ document.getElementById('play-button').onclick = () => {
     wrongLettersArr = [];
 
     randomSelectedWord = wordBank[Math.floor(Math.random() * wordBank.length)].toUpperCase();
+    console.log('play again ' + randomSelectedWord)
+
+    // //Empty the correct span letters
+    // $("span").html("") -- this caused a bug after adding the display of correct word in the notification modal
+
+    //Hence added the below line to fix it :-
+    clickedAlphabets.innerHTML = `${randomSelectedWord.split('').map(letter => `<span class="letter"></span>`).join('')}`;
 
 }
 
@@ -132,7 +140,7 @@ function showNotification(wrappedCorrectWord, result) {
 
     if (wrappedCorrectWord === randomSelectedWord || wrongLettersArr.length === hangman.length) {
         modalBtn.click();
-        announceGameResult.innerText = result;
+        announceGameResult.innerHTML = result;
 
     } else {
         notification.classList.add('show');
